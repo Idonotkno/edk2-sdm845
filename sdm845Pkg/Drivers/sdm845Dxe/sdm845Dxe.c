@@ -43,6 +43,14 @@ InitPeripherals (
   IN VOID
   )
 {
+// add watchdog for dog qcom
+{
+DEBUG ((EFI_D_WARN, "\n \a Feeding the QcomWdog\a"));
+//Feed the QcomWdogTimer
+MmioWrite32(0x17C10008, 0x00000000);
+DEBUG ((EFI_D_WARN, "\n \v The Dog is feeded :)\v"));
+
+
   //This mainly works.
   EFI_STATUS            Status;
 
